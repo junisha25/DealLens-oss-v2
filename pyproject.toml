@@ -1,7 +1,7 @@
 [project]
 name = "deallens-oss-v2"
 version = "0.1.0"
-description = "Add your description here"
+description = "AI-powered SEC Filing Intelligence Platform built with FastAPI"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [

@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 
 from app.api.router import api_router
+from app.core.config import settings
 
 app = FastAPI(
-    title="DealLens OSS API",
-    description="AI-powered SEC Filing Intelligence Platform",
-    version="2.0.0",
+    title=settings.app_name,
+    version=settings.app_version,
 )
 
 app.include_router(api_router)
@@ -14,5 +14,6 @@ app.include_router(api_router)
 @app.get("/", tags=["Root"])
 def root():
     return {
-        "message": "Welcome to DealLens OSS v2 🚀",
+        "message": f"Welcome to {settings.app_name} 🚀",
+        "debug": settings.debug,
     }
